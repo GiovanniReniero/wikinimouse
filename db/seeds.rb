@@ -6,8 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do 
-    new_article = Article.new(title: Faker::Food.dish, content: Faker::Lorem.paragraphs )
+
+puts "Seeding......."
+
+
+24.times do 
+    new_article = Article.new(title: Faker::Mountain.name, content: Faker::Lorem.paragraph_by_chars(number: 556, supplemental: false) )
     new_article.save
   end
 
@@ -19,5 +23,5 @@
   # end
 
 
-puts "Finished Seeding, Woohooo!!!"
+puts "SUCCESS...seeds planted!!!"
 
