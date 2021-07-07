@@ -1,7 +1,13 @@
-<%= form_with model: @article do |form| %>
-<%= form.label :title, "Title"%>
-<%= form.text_field :title %>
-<%= form.label :content, "Content" %>
-<%= form.text_area :content, size:"60x10" %>
-<%= form.submit %>
+
+
+
+
+<%= simple_form_for @article do |f| %>
+  <%= f.input :title  %>
+  <br>
+  <%= f.text_area :content, size: "120x10" %>
+  <br>
+  <%= f.button :submit %>
 <% end %>
+
+
