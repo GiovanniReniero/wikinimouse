@@ -33,9 +33,11 @@ class ArticlesController < ApplicationController
     @article.update(article_params)
     redirect_to article_path(@article)
   end
-
-  def destry
-
+  
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
   end
 
 private
@@ -44,8 +46,8 @@ private
     params.require(:article).permit(:title, :content)
   end
 
-  def find_article
-    @task = Article.find(params[:id])
-  end
+  # def find_article
+    # @task = Article.find(params[:id])
+  # end
   
 end
